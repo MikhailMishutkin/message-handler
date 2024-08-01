@@ -19,9 +19,15 @@ func (k *KafkaRepo) Producer(ctx context.Context, message *models.Message) error
 		kafka.Message{Value: m},
 	)
 	if err != nil {
-		log.Println("failed to write messages:", err)
+		log.Fatal("failed to write messages:", err)
 		return err
 	}
+
+	//if err := k.k.Close(); err != nil {
+	//	log.Println("failed to close writer:", err)
+	//	return err
+	//
+	//}
 
 	return nil
 }
