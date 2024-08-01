@@ -1,0 +1,6 @@
+.vscode/
+LICENSE
+migrate
+.env
+vendor/
+.idea/
